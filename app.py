@@ -119,3 +119,5 @@ if __name__ == '__main__':
 # feat: add caching to reduce API calls
 
 # fix: handle special characters in city names
+
+# feat: add --version flag with project info
