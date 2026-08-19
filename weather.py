@@ -172,3 +172,5 @@ if __name__ == "__main__":
 # refactor: split weather.py into smaller modules
 
 # feat: add daily summary statistics
+
+# style: improve terminal output formatting
