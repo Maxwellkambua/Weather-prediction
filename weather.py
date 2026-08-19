@@ -156,3 +156,5 @@ if __name__ == "__main__":
 # docs: add troubleshooting section to README
 
 # feat: add --export flag to save weather to JSON file
+
+# fix: handle null values in API response gracefully
