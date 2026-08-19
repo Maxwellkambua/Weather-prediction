@@ -109,3 +109,5 @@ if __name__ == '__main__':
 # feat: add request timeout handling to prevent hangs
 
 # feat: add --city alias for city name parameter
+
+# refactor: extract API calls to separate module
