@@ -123,3 +123,5 @@ if __name__ == '__main__':
 # feat: add --version flag with project info
 
 # style: add type hints to all functions
+
+# feat: add support for multiple cities in one command
