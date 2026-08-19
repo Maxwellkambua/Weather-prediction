@@ -132,3 +132,5 @@ if __name__ == "__main__":
 # feat: add --city alias for city name parameter
 
 # refactor: extract API calls to separate module
+
+# feat: add weather alerts for extreme conditions
