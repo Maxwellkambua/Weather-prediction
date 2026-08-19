@@ -107,3 +107,5 @@ if __name__ == '__main__':
 # feat: add support for Fahrenheit temperature conversion
 
 # feat: add request timeout handling to prevent hangs
+
+# feat: add --city alias for city name parameter
