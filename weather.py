@@ -166,3 +166,5 @@ if __name__ == "__main__":
 # feat: add --units flag for metric/imperial toggle
 
 # docs: add API documentation with examples
+
+# feat: add error recovery for network failures
