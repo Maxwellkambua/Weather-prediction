@@ -147,3 +147,5 @@ if __name__ == '__main__':
 # docs: add API documentation with examples
 
 # feat: add error recovery for network failures
+
+# refactor: split weather.py into smaller modules
