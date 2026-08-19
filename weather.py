@@ -152,3 +152,5 @@ if __name__ == "__main__":
 # feat: add logging of all API requests
 
 # refactor: improve forecast display formatting
+
+# docs: add troubleshooting section to README
