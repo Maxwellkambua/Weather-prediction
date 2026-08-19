@@ -113,3 +113,5 @@ if __name__ == '__main__':
 # refactor: extract API calls to separate module
 
 # feat: add weather alerts for extreme conditions
+
+# docs: update README with new CLI flags
