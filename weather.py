@@ -146,3 +146,5 @@ if __name__ == "__main__":
 # style: add type hints to all functions
 
 # feat: add support for multiple cities in one command
+
+# test: add sample test cases for weather codes
