@@ -124,3 +124,5 @@ if __name__ == "__main__":
 # docs: add CHANGELOG to track development progress
 
 # feat: implement --verbose flag for detailed weather output
+
+# feat: add support for Fahrenheit temperature conversion
