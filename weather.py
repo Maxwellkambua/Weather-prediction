@@ -158,3 +158,5 @@ if __name__ == "__main__":
 # feat: add --export flag to save weather to JSON file
 
 # fix: handle null values in API response gracefully
+
+# feat: add progress indicator during API fetch
