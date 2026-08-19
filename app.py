@@ -139,3 +139,5 @@ if __name__ == '__main__':
 # fix: handle null values in API response gracefully
 
 # feat: add progress indicator during API fetch
+
+# style: add consistent docstrings to all functions
