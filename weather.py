@@ -164,3 +164,5 @@ if __name__ == "__main__":
 # style: add consistent docstrings to all functions
 
 # feat: add --units flag for metric/imperial toggle
+
+# docs: add API documentation with examples
