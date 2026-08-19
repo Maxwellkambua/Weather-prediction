@@ -129,3 +129,5 @@ if __name__ == '__main__':
 # test: add sample test cases for weather codes
 
 # feat: add logging of all API requests
+
+# refactor: improve forecast display formatting
