@@ -127,3 +127,5 @@ if __name__ == '__main__':
 # feat: add support for multiple cities in one command
 
 # test: add sample test cases for weather codes
+
+# feat: add logging of all API requests
