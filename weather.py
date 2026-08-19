@@ -122,3 +122,5 @@ if __name__ == "__main__":
     main()
 
 # docs: add CHANGELOG to track development progress
+
+# feat: implement --verbose flag for detailed weather output
