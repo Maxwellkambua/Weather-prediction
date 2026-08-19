@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherWise Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #2d4373, #4a6fa5);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            font-weight: 300;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+        .search-form {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .search-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+            outline: none;
+            transition: 0.3s;
+        }
+        .search-form input:focus {
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+        }
+        .search-form button {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 50px;
+            background: #ff6b35;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .search-form button:hover {
+            background: #ff8555;
+            transform: scale(1.02);
+        }
+        .weather-card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 24px;
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+        .weather-card .city {
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+        .weather-card .country {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+        }
+        .weather-card .emoji {
+            font-size: 4rem;
+            margin: 15px 0 5px;
+        }
+        .weather-card .temp {
+            font-size: 3.5rem;
+            font-weight: 200;
+        }
+        .weather-card .temp sup {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+        .weather-details {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0 10px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+        .forecast {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 25px;
+        }
+        .forecast-day {
+            background: rgba(255,255,255,0.1);
+            padding: 12px 8px;
+            border-radius: 16px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .forecast-day:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .forecast-day .day {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        .forecast-day .emoji {
+            font-size: 1.8rem;
+            margin: 5px 0;
+        }
+        .forecast-day .temps {
+            font-size: 0.85rem;
+        }
+        .forecast-day .temps .min { opacity: 0.6; }
+        .api-link {
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+        }
+        .api-link a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+        }
+        .api-link a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: #ff6b35;
+            background: rgba(255,0,0,0.2);
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ WeatherWise</h1>
+        <p class="subtitle">Check the forecast for any city</p>
+
+        <form class="search-form" method="POST">
+            <input type="text" name="city" placeholder="Enter city name..." value="{{ city or '' }}" required />
+            <button type="submit">Search</button>
+        </form>
+
+        {% if weather %}
+        <div class="weather-card">
+            <div class="city">{{ city }}</div>
+            <div class="country">{{ country or '' }}</div>
+            <div class="emoji">{{ weather.emoji }}</div>
+            <div class="temp">{{ weather.temp }}<sup>°C</sup></div>
+            <div class="weather-details">
+                <span>🌡️ Feels {{ weather.feels_like }}°C</span>
+                <span>💧 {{ weather.humidity }}%</span>
+                <span>🌬️ {{ weather.wind }} km/h</span>
+            </div>
+
+            <div class="forecast">
+                {% for day in weather.forecast %}
+                <div class="forecast-day">
+                    <div class="day">{{ day.date }}</div>
+                    <div class="emoji">{{ day.emoji }}</div>
+                    <div class="temps">
+                        <span class="min">{{ day.min }}°</span> / <span class="max">{{ day.max }}°</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% elif city %}
+        <div class="error">❌ City not found. Please check the spelling.</div>
+        {% endif %}
+
+        <div class="api-link">
+            📡 API also available at <a href="/api/weather/London">/api/weather/London</a>
+        </div>
+    </div>
+</body>
+</html>
