@@ -121,3 +121,5 @@ if __name__ == '__main__':
 # fix: handle special characters in city names
 
 # feat: add --version flag with project info
+
+# style: add type hints to all functions
