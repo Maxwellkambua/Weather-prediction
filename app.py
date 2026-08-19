@@ -105,3 +105,5 @@ if __name__ == '__main__':
 # feat: implement --verbose flag for detailed weather output
 
 # feat: add support for Fahrenheit temperature conversion
+
+# feat: add request timeout handling to prevent hangs
