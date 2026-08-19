@@ -141,3 +141,5 @@ if __name__ == '__main__':
 # feat: add progress indicator during API fetch
 
 # style: add consistent docstrings to all functions
+
+# feat: add --units flag for metric/imperial toggle
