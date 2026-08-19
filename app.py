@@ -149,3 +149,5 @@ if __name__ == '__main__':
 # feat: add error recovery for network failures
 
 # refactor: split weather.py into smaller modules
+
+# feat: add daily summary statistics
