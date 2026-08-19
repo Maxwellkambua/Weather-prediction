@@ -133,3 +133,5 @@ if __name__ == '__main__':
 # refactor: improve forecast display formatting
 
 # docs: add troubleshooting section to README
+
+# feat: add --export flag to save weather to JSON file
