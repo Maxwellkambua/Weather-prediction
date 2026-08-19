@@ -117,3 +117,5 @@ if __name__ == '__main__':
 # docs: update README with new CLI flags
 
 # feat: add caching to reduce API calls
+
+# fix: handle special characters in city names
