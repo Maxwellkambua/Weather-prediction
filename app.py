@@ -115,3 +115,5 @@ if __name__ == '__main__':
 # feat: add weather alerts for extreme conditions
 
 # docs: update README with new CLI flags
+
+# feat: add caching to reduce API calls
